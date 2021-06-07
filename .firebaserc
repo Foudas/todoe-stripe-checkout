@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "todoe-8f40f"
+  },
+  "targets": {
+    "todoe-8f40f": {
+      "hosting": {
+        "admin": [
+          "todoe-checkout"
+        ]
+      }
+    }
+  }
+}
