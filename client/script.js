@@ -2,6 +2,7 @@ var firebaseConfig = {
   // FIREBASE CONFIG HERE!
 };
 
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
