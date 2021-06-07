@@ -1,3 +1,15 @@
+var firebaseConfig = {
+  // FIREBASE CONFIG HERE!
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const checkoutButton = document.getElementById('checkout-button')
+const createStripeCheckout = firebase.functions().httpsCallable('createStripeCheckout')
+const stripe = Stripe('YOUR STRIPE KEY HERE')
+
+
 // If a fetch error occurs, log it to the console and show it in the UI.
 var handleFetchResult = function(result) {
   if (!result.ok) {
