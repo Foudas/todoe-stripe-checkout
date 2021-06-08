@@ -1,33 +1,3 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAGPPwjCfDvKPoiJYwhftRtFAcsDxliFrI",
-  authDomain: "todoe-8f40f.firebaseapp.com",
-  databaseURL: "https://todoe-8f40f.firebaseio.com",
-  projectId: "todoe-8f40f",
-  storageBucket: "todoe-8f40f.appspot.com",
-  messagingSenderId: "566738057465",
-  appId: "1:566738057465:web:e7b543d474b4c520fe8a28",
-  measurementId: "G-5Z152EDJZQ"
-};
-
-
-
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-const checkoutButton = document.getElementById('basic-plan-btn')
-const createStripeCheckout = firebase.functions().httpsCallable('createStripeCheckout')
-const stripe = Stripe('pk_live_51IxYO0C4RmeVMzj54jQvfVxdT7AG3O3lx4h4H0fSSi6L4L2wKbp1tO3qM6aaS6lwdg1PfYuVSsJZA8hV3hiPJgNy00rNMJVi68')
-
-  checkoutButton.addEventListener('click', () => {
-    createStripeCheckout()
-      .then(response => {
-        const sessionId = response.data.ifunctions/package.jsond
-        stripe.redirectToCheckout({ sessionId: sessionId })
-      })
-  })
-
 // If a fetch error occurs, log it to the console and show it in the UI.
 var handleFetchResult = function(result) {
   if (!result.ok) {

@@ -11,18 +11,12 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
     mode: "subscription",
     success_url: "http://localhost:4242/success",
     cancel_url: "http://localhost:4242/cancel",
-//    line_items: [
-//      {
-//        quantity: 1,
-//        price_data: {
-//          currency: "usd",
-//          unit_amount: (100) * 100, // 10000 = 100 USD
-//          product_data: {
-//            name: "New camera",
-//          },
-//        },
-//      },
-//    ],
+    line_items: [
+        {
+          price: "price_1IxYqXC4RmeVMzj56t3kuvgk",
+          quantity: 1,
+        },
+    ],
   });
 
   return {
